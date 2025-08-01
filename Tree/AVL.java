@@ -1,6 +1,4 @@
 public class AVL{
-
-
     class Node{
 
         Node left,right;
