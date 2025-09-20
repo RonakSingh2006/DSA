@@ -24,7 +24,7 @@ class Solution {
 
         for(int i=31 ; i>=0 ; i--){
             if((bases[i] & (1<<i)) != 0){
-                ans ^= bases[i];
+                ans = Math.max(ans,ans^bases[i]);
             }
         }
 
