@@ -1,5 +1,3 @@
-package SegmentTree;
-
 class SegmentTree {
     int st[];
     int arr[];

@@ -1,5 +1,3 @@
-package SegmentTree;
-
 public class LazzyPropogation {
   int st[];
   int arr[];
