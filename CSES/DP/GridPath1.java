@@ -19,22 +19,28 @@ public class GridPath1 {
       return;
     }
 
-    long dp[][] = new long[n+1][n+1];
-    dp[n-1][n-1] = 1;
+    // long dp[][] = new long[n+1][n+1];
+    long prev[] = new long[n+1];
 
 
     for(int r=n-1 ; r>=0 ; r--){
-      for(int c=n-1 ; c>=0 ; c--){
-        if(r==n-1 && c==n-1) continue;
+      long curr[] = new long[n+1];
 
-        if(grid[r][c] != '*'){
-          dp[r][c] = (dp[r+1][c] + dp[r][c+1])%MOD;
+      for(int c=n-1 ; c>=0 ; c--){
+        if(r==n-1 && c==n-1){
+          curr[c] = 1;
+          continue;
         }
 
+        if(grid[r][c] != '*'){
+          curr[c] = (prev[c] + curr[c+1])%MOD;
+        }
       }
+
+      prev = curr;
     }
   
 
-    System.out.println(dp[0][0]);
+    System.out.println(prev[0]);
   }
 }
