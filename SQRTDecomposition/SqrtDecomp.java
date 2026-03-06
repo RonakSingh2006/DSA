@@ -8,9 +8,9 @@ public class SqrtDecomp{
 
     // we make a array of size Math.ceil(sqrt)
 
-    int sqrt = (int)Math.ceil(Math.sqrt(n));
+    int sqrt = (int)Math.sqrt(n);
 
-    int len = (int)Math.ceil(sqrt);
+    int len = (n/sqrt) + 1;
 
     int block[] = new int[len];
 
