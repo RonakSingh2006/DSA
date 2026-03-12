@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class Subordinates{
   public static void main(String[] args) throws IOException{
@@ -10,15 +11,15 @@ public class Subordinates{
 
     int n = Integer.parseInt(br.readLine());
 
-    String aS[] = br.readLine().split(" ");
+    StringTokenizer st = new StringTokenizer(br.readLine());
     
     List<List<Integer>> adj = new ArrayList<>();
     for(int i=0 ; i<n ; i++){
       adj.add(new ArrayList<>());
     }
 
-    for(int i=0 ; i<aS.length ; i++){
-      int x = Integer.parseInt(aS[i]);
+    for(int i=0 ; i<n-1 ; i++){
+      int x = Integer.parseInt(st.nextToken());
 
       adj.get(x-1).add(i+1);
     }
